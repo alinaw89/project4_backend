@@ -27,9 +27,9 @@ Rails.application.routes.draw do
 
    end
 
-   # resources :visits, except: [:new, :edit] do
+   resources :visits, except: [:new, :edit] do
 
-   # end
+   end
 
 
 
