@@ -32,6 +32,16 @@ Rails.application.routes.draw do
    end
 
 
+   resources :memberships, except: [:new, :edit] do
+
+   end
+
+
+   resources :groups, except: [:new, :edit] do
+
+   end
+
+
 
  end
 
