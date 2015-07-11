@@ -22,26 +22,26 @@ Rails.application.routes.draw do
    # post '/register' => 'auth#register'
    # delete '/logout' => 'auth#logout'
 
-   root "users#index"
+   # root "users#index"
 
 
-   resources :users, except: [:new, :edit] do
+   # resources :users, except: [:new, :edit] do
 
-   end
+   # end
 
-   resources :visits, except: [:new, :edit] do
+   # resources :visits, except: [:new, :edit] do
 
-   end
-
-
-   resources :memberships, except: [:new, :edit] do
-
-   end
+   # end
 
 
-   resources :groups, except: [:new, :edit] do
+   # resources :memberships, except: [:new, :edit] do
 
-   end
+   # end
+
+
+   # resources :groups, except: [:new, :edit] do
+
+   # end
 
 
 
