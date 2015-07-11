@@ -22,6 +22,8 @@ Rails.application.routes.draw do
    # post '/register' => 'auth#register'
    # delete '/logout' => 'auth#logout'
 
+   root "users#index"
+
 
    resources :users, except: [:new, :edit] do
 

@@ -1,8 +1,8 @@
 class CreateVisits < ActiveRecord::Migration
   def change
     create_table :visits do |t|
-      t.string :start_of_visit
-      t.string :end_of_visit
+      t.datetime :start_of_visit
+      t.datetime :end_of_visit
       t.string :protocol
       t.string :subject_id
       t.string :reason_for_visit
