@@ -16,6 +16,27 @@ class VisitsController < ApplicationController
       render json: @visit, status: :created, location: visits_url
     else
       render json: @visit.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @visit = Visit.find(params[:id])
+    if @visit.update(visits_params)
+      head :no_content
+    else
+      render json: @visit.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @visit = Visit.find(params[id])
+    @visit.destroy
+    head :no_content
+  end
+
+  private
+  def visits_params
+    params.permit(:start_of_visit, :end_of_visit, :protocol, :subject_id, :reason_for_visit, :message, :visit_status, :sent_status, :manager_response_status)
   end
 
 
