@@ -15,7 +15,27 @@ class UsersController < ApplicationController
       render json: @user, status: :created, location: users_url
     else
       render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      head :no_content
+    else
+      render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    head :no_content
+  end
+
+  private
+  def user_params
+    params.permit(:name, :email, :phone_number)
+  end
 
 end
