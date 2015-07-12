@@ -32,5 +32,14 @@ module Backend
 
 
     config.active_record.raise_in_transactional_callbacks = true
+
+     config.middleware.use Rack::Cors do
+      allow do
+        # WARNING: Allow ALL cross site scripting from ALL domains
+        origins '*'
+        # WARNING: Allow ALL HTTP method
+        resource '*', :headers => :any, :methods => [:get, :post,:delete, :options]
+      end
+    end
   end
 end
