@@ -1,9 +1,16 @@
 class VisitsController < ApplicationController
 
+  # before_action :set_user
+
   def index
     @visits = Visit.all
     render json: @visits
   end
+
+  # def index
+  #   @visits = @user.visits
+  #   render json: @visits
+  # end
 
   def show
     @visit = Visit.find(params[:id])
@@ -37,6 +44,10 @@ class VisitsController < ApplicationController
   private
   def visits_params
     params.permit(:start_of_visit, :end_of_visit, :protocol, :subject_id, :reason_for_visit, :message, :visit_status, :sent_status, :manager_response_status)
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
 

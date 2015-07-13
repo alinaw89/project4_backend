@@ -18,14 +18,14 @@ class MembershipsController < ApplicationController
     end
   end
 
-  def update
-    @membership = Membership.find(params[:id])
-    if @membership(memberships_params)
-      head :no_content
-    else
-      render json: @membership.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   @membership = Membership.find(params[:id])
+  #   if @membership(memberships_params)
+  #     head :no_content
+  #   else
+  #     render json: @membership.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   def destroy
     @membership = Membership.find(params[:id])
