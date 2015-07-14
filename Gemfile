@@ -30,7 +30,10 @@ gem 'active_model_serializers'
 gem 'rack-cors', :require => 'rack/cors'
 
 # Twilio
-gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 3.12'
+
+# Bcrypt Authentication
+gem 'bcrypt'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
