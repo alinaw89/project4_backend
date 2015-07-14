@@ -35,6 +35,11 @@ gem 'twilio-ruby', '~> 3.12'
 # Bcrypt Authentication
 gem 'bcrypt'
 
+# dotenv
+gem 'dotenv'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,6 +62,8 @@ gem 'bcrypt'
     gem 'rspec-rails'
 
     gem 'capybara'
+
+
 
 
 end

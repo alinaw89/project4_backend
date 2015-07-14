@@ -7,6 +7,7 @@ Rails.application.routes.draw do
    post '/logout', to: 'auth#logout'
 
    post 'twilio/voice' => 'twilio#voice'
+   post 'notifications/notify' => 'notifications#notify'
 
    # root "users#index"
 
