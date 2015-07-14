@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
 
+
+   post '/login', to: 'auth#login'
+   post '/register', to: 'auth#register'
+   post '/logout', to: 'auth#logout'
+
+   post 'twilio/voice' => 'twilio#voice'
+
    # root "users#index"
 
    # get "users" => "users#index"
@@ -24,7 +31,6 @@ Rails.application.routes.draw do
    end
 
 
-   post 'twilio/voice' => 'twilio#voice'
 
 
 

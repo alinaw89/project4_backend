@@ -1,4 +1,4 @@
-class VisitsController < ApplicationController
+class VisitsController < ProtectedController
 
   # before_action :set_user
 

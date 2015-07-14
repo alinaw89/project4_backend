@@ -1,4 +1,4 @@
-class MembershipsController < ApplicationController
+class MembershipsController < ProtectedController
   def index
     @memberships = Membership.all
     render json: @memberships

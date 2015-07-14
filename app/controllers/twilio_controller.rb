@@ -1,6 +1,6 @@
 require 'twilio-ruby'
 
-class TwilioController < ApplicationController
+class TwilioController < ProtectedController
   include Webhookable
 
   after_filter :set_header
@@ -15,4 +15,7 @@ class TwilioController < ApplicationController
 
     render_twiml response
   end
+
+  # def text
+  # end
 end

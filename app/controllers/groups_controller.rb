@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class GroupsController < ProtectedController
   def index
     @groups = Group.all
     render json: @groups

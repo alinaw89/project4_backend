@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ProtectedController
   def index
     @users = User.all
     render json: @users
