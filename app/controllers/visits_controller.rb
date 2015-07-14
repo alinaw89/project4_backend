@@ -18,7 +18,7 @@ class VisitsController < ProtectedController
   end
 
   def create
-    @visit = current_user.visits.new(visits_params)
+    @visit = current_user.visit.new(visits_params)
     if @visit.save
       render json: @visit, status: :created, location: visits_url
     else

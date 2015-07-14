@@ -2,6 +2,7 @@ class VisitSerializer < ActiveModel::Serializer
 
 attributes :start_of_visit, :end_of_visit, :protocol, :subject_id, :reason_for_visit, :visit_status, :sent_status
 
+# has_one :user
 
 end
 
