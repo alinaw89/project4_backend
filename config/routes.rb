@@ -6,30 +6,21 @@ Rails.application.routes.draw do
    post '/register', to: 'auth#register'
    post '/logout', to: 'auth#logout'
 
-   post 'twilio/voice' => 'twilio#voice'
-   post 'notifications/notify' => 'notifications#notify'
+   # post 'twilio/voice' => 'twilio#voice'
+   # post 'notifications/notify' => 'notifications#notify'
 
    # root "users#index"
 
    # get "users" => "users#index"
-   resources :users, except: [:new, :edit] do
+   resources :groups, except: [:new, :edit]
+   resources :users, except: [:new, :edit]
 
-   end
+   resources :visits, except: [:new, :edit]
+   get '/visits/:visit_id/notification', to: 'notification#show'
+   post '/visits/:visit_id/notification', to: 'notification#create'
 
-   resources :visits, except: [:new, :edit] do
+   # get '/groups/:group_id/notifications', to: 'notification#find'
 
-   end
-
-
-
-   resources :memberships, except: [:new, :edit] do
-
-   end
-
-
-   resources :groups, except: [:new, :edit] do
-
-   end
 
 
 

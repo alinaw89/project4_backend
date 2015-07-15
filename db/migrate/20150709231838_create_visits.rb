@@ -7,9 +7,7 @@ class CreateVisits < ActiveRecord::Migration
       t.string :subject_id
       t.string :reason_for_visit
       t.text :message
-      t.string :visit_status
-      t.string :sent_status
-      t.string :manager_response_status
+      t.string :priority
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

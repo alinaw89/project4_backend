@@ -1,7 +1,7 @@
+Notification.delete_all
 Visit.delete_all
 User.delete_all
 Group.delete_all
-Membership.delete_all
 
 # User.create!(name:'Jane', email: 'Jane@partners.org', phone_number: '5081234567')
 # User.create!(name:'Nawal', email: 'Nawal@partners.org', phone_number: '3393648796')
@@ -14,7 +14,7 @@ Membership.delete_all
 # Visit.create!(start_of_visit:'10/3/2015 at 10:30AM', end_of_visit:'10/3/2015 at 11:45AM', protocol:'11800 SARP Trial', subject_id:'008', reason_for_visit:'bronchoscopy appointment', message:'Patient experienced severe asthma exacerbation and cannot breathe', visit_status:'high', sent_status:'message sent', manager_response_status:'need more information' )
 
 # GROUPS
-mgh_group = Group.create!(name:'mgh');
+mgh_group = Group.create!(name:'mgh', manager_phone: '(857)600-8913');
 
 # # USERS
 # nawal  = User.create!(name:'Nawal', email: 'nawal@partners.org', phone_number: '3393340675');
@@ -24,7 +24,7 @@ mgh_group = Group.create!(name:'mgh');
 
 # # USERS WITH AUTHENTICATION
 
-@user_one = User.create!(name: 'Nawal', email: 'nali1@partners.org', phone_number: '3393642931', password: 'nawal')
+ryan = User.create!(name: 'Ryan', email: 'ryanm@partners.org', phone_number: '(781) 253-2154', password: 'ryan')
 
 
 
@@ -36,8 +36,11 @@ mgh_group = Group.create!(name:'mgh');
 
 
 # # VISITS
-# ryan.visits.create!(start_of_visit:'10/3/2015 at 10:30AM', end_of_visit:'10/3/2015 at 11:45AM', protocol:'11800 SARP Trial', subject_id:'008', reason_for_visit:'Bronchoscopy Appointment', message:'Patient experienced severe asthma exacerbation and cannot breathe', visit_status:'High', sent_status:'Message Sent', manager_response_status:'Need more information')
+ryan.visits.create!(start_of_visit:'10/3/2015 at 10:30AM', end_of_visit:'10/3/2015 at 11:45AM', protocol:'11800 SARP Trial', subject_id:'008', reason_for_visit:'Bronchoscopy Appointment', message:'Patient experienced severe asthma exacerbation and cannot breathe', priority:'high')
 
 # rob.visits.create!(start_of_visit:'10/2/2015 at 9AM', end_of_visit:'10/2/2015 at 10AM', protocol:'10180 Diabetes Metformin Trial', subject_id:'006', reason_for_visit:'Follow-Up Appointment', message:'Patient fainted during blood draw. Was sent to emergency. Needs follow-up immediately!', visit_status:'High', sent_status:'Message Sent', manager_response_status:'Deferred')
 
 # brendan.visits.create!(start_of_visit:'10/3/2015 at 12:30PM', end_of_visit:'10/3/2015 at 3:00PM', protocol:'11844 KIA Trial', subject_id:'112', reason_for_visit:'Annual Follow-up', message:'Patient noted serious adverse event which required hospitalization. This requires immediate follow-up to the IRB in 72 hours.', visit_status:'High', sent_status:'Message Sent', manager_response_status:'Need more information')
+
+# # NOTIFICATIONS
+ryan.visits.first.notifications.create!(message:"THIS IS A NOTIFICATION")

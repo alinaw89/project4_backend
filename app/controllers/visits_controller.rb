@@ -43,7 +43,7 @@ class VisitsController < ProtectedController
 
   private
   def visits_params
-    params.permit(:start_of_visit, :end_of_visit, :protocol, :subject_id, :reason_for_visit, :message, :visit_status, :sent_status, :manager_response_status)
+    params.permit(:start_of_visit, :end_of_visit, :protocol, :subject_id, :reason_for_visit, :message, :priority)
   end
 
   def set_user
