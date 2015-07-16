@@ -37,9 +37,12 @@ class VisitsController < ProtectedController
 
   def destroy
     @visit = Visit.find(params[id])
+    @notification = Notification.find(params[:visit_id])
     @visit.destroy
+    @notification.destroy
     head :no_content
   end
+  # delete every notification that has that visit id
 
   private
   def visits_params
