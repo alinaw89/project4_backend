@@ -14,8 +14,9 @@ Group.delete_all
 # Visit.create!(start_of_visit:'10/3/2015 at 10:30AM', end_of_visit:'10/3/2015 at 11:45AM', protocol:'11800 SARP Trial', subject_id:'008', reason_for_visit:'bronchoscopy appointment', message:'Patient experienced severe asthma exacerbation and cannot breathe', visit_status:'high', sent_status:'message sent', manager_response_status:'need more information' )
 
 # GROUPS
-mgh_group = Group.create!(name:'mgh', manager_phone: '(339)364-0657');
+nawal = Group.create!(name:'mgh', manager_name: 'Nawal', manager_phone: '(339)364-0657');
 
+aaron = Group.create!(name:'mgh', manager_name: 'Aaron', manager_phone: '(857)600-8913');
 # # USERS
 # nawal  = User.create!(name:'Nawal', email: 'nawal@partners.org', phone_number: '3393340675');
 # rob  = User.create!(name:'Rob', email: 'rob@partners.org', phone_number: '5085547645');
@@ -25,7 +26,7 @@ mgh_group = Group.create!(name:'mgh', manager_phone: '(339)364-0657');
 # # USERS WITH AUTHENTICATION
 
 nawal = User.create!(name: 'Nawal', email: 'nali@partners.com', phone_number: '(781) 253-2154', password: 'nawal')
-ryan = User.create!(name: 'Ryan', email: 'ryanm@partners.org', phone_number: '(781) 253-2154', password: 'ryan', group: mgh_group)
+ryan = User.create!(name: 'Ryan', email: 'ryanm@partners.org', phone_number: '(781) 253-2154', password: 'ryan', group: aaron)
 
 
 
