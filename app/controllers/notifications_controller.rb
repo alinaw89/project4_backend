@@ -15,7 +15,9 @@ class NotificationsController < ProtectedController
   def create
     @notification = current_user.visits.find(params[:visit_id]).notifications.new(notification_params)
     if @notification.save
-      notify
+      if current_user.visits.find(params[:visit_id]).priority === 'High'
+        notify
+      end
       render json: @notification, status: :created
     else
       render json: @notification.errors, status: :unprocessable_entity
