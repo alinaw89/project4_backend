@@ -16,10 +16,11 @@ Rails.application.routes.draw do
    resources :users, except: [:new, :edit]
 
    resources :visits, except: [:new, :edit]
-   get '/visits/:visit_id/notification', to: 'notification#show'
-   post '/visits/:visit_id/notification', to: 'notification#create'
+   get '/visits/:visit_id/notifications', to: 'notifications#show'
+   post '/visits/:visit_id/notifications', to: 'notifications#create'
 
    # get '/groups/:group_id/notifications', to: 'notification#find'
+
 
 
 

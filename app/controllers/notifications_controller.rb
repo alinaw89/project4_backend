@@ -2,9 +2,6 @@ class NotificationsController < ProtectedController
 
   skip_before_action :verify_authenticity_token
 
-
-  client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
-
   def index
     @notifications = Notification.all
     render json: @notifications
@@ -19,20 +16,23 @@ class NotificationsController < ProtectedController
     @notification = current_user.visits.find(params[:visit_id]).notifications.new(notification_params)
     if @notification.save
       notify
-      render json: @notification, status: :created, location: notifications_url
+      render json: @notification, status: :created
     else
       render json: @notification.errors, status: :unprocessable_entity
     end
   end
 
-  private
-  def notification_params
-    params.permit(:message)
+  def notify
+    client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
+    @group = Group.find(current_user.group)
+    message = client.messages.create from: current_user.phone_number, to: @group.manager_phone, body: notification_params[:message]
   end
 
-  def notify
-    message = client.messages.create from: current_user.phone_number, to: current_user.group.manager_phone, body: notification_params[:message]
-    render plain: message.status
+  private
+  def notification_params
+    params.require(:notification).permit(:message)
   end
 
 end
+
+#current_user.group.manager_phone
