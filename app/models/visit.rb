@@ -1,6 +1,6 @@
 class Visit < ActiveRecord::Base
   belongs_to :employee, :class_name => 'User'
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   # after_save :send_to_twilio #after you try to save a visit, twilio is always invoked but will only send it visit status is high
 
 

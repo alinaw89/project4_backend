@@ -3,7 +3,11 @@ class VisitsController < ProtectedController
   # before_action :set_user
 
   def index
-    @visits = Visit.all
+    if current_user
+      @visits = current_user.visits
+    else
+      @visits = Visit.all
+    end
     render json: @visits
   end
 
@@ -36,13 +40,13 @@ class VisitsController < ProtectedController
   end
 
   def destroy
-    @visit = Visit.find(params[id])
-    @notification = Notification.find(params[:visit_id])
+    @visit = Visit.find(params[:id])
+    # @notification = Notification.find(visit_id: params[:id])
     @visit.destroy
-    @notification.destroy
+    # @notification.destroy
     head :no_content
   end
-  # delete every notification that has that visit id
+  # get the visit id
 
   private
   def visits_params
