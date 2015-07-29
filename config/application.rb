@@ -14,6 +14,9 @@ require "dotenv"
 
 Dotenv.load
 
+# config/application.rb
+config.assets.initialize_on_precompile = false
+
 
 # require "rails/test_unit/railtie"
 
