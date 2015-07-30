@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
    resources :visits, except: [:new, :edit]
 
+   # get '/login', to: 'login#index'
+
    get '/notifications', to: 'notifications#index'
 
    get '/visits/:visit_id/notifications', to: 'notifications#show'
