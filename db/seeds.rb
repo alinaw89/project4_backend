@@ -16,7 +16,6 @@ Group.delete_all
 # GROUPS
 nawal = Group.create!(name:'mgh', manager_name: 'Nawal', manager_phone: '(339)364-0657');
 
-aaron = Group.create!(name:'mgh', manager_name: 'Aaron', manager_phone: '(857)600-8913');
 # # USERS
 # nawal  = User.create!(name:'Nawal', email: 'nawal@partners.org', phone_number: '3393340675');
 # rob  = User.create!(name:'Rob', email: 'rob@partners.org', phone_number: '5085547645');
@@ -27,9 +26,9 @@ aaron = Group.create!(name:'mgh', manager_name: 'Aaron', manager_phone: '(857)60
 
 # nawal = User.create!(name: 'Nawal', email: 'nali@partners.com', phone_number: '(781) 253-2154', password: 'nawal')
 ryan = User.create!(name: 'Ryan', email: 'ryanm@partners.org', phone_number: '(781) 253-2154', password: 'ryan', group: nawal)
-rachael = User.create!(name: 'Rachael', email: 'rachael@partners.org', phone_number: '(781) 253-2154', password: 'rachael', group: aaron)
+rachael = User.create!(name: 'Rachael', email: 'rachael@partners.org', phone_number: '(781) 253-2154', password: 'rachael', group: nawal)
 dan = User.create!(name: 'Dan', email: 'dan@partners.org', phone_number: '(781) 253-2154', password: 'dan', group: nawal)
-jillian = User.create!(name: 'Jillian', email: 'jillian@partners.org', phone_number: '(781) 253-2154', password: 'jillian', group: aaron)
+jillian = User.create!(name: 'Jillian', email: 'jillian@partners.org', phone_number: '(781) 253-2154', password: 'jillian', group: nawal)
 
 # # MEMBERSHIPS
 # nawal.memberships.create!(role: 'manager', group: mgh_group);
