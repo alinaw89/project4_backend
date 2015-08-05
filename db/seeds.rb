@@ -16,13 +16,13 @@ Group.delete_all
 # GROUPS
 nawal = Group.create!(name:'mgh', manager_name: 'Nawal', manager_phone: '(339)364-0657');
 
-# # USERS
+# USERS
 # nawal  = User.create!(name:'Nawal', email: 'nawal@partners.org', phone_number: '3393340675');
 # rob  = User.create!(name:'Rob', email: 'rob@partners.org', phone_number: '5085547645');
 # ryan  = User.create!(name:'Ryan', email: 'ryan@partners.org', phone_number: '7743627860');
 # brendan  = User.create!(name:'Brendan', email: 'brendan@partners.org', phone_number: '2039487568');
 
-# # USERS WITH AUTHENTICATION
+# USERS WITH AUTHENTICATION
 
 # nawal = User.create!(name: 'Nawal', email: 'nali@partners.com', phone_number: '(781) 253-2154', password: 'nawal')
 ryan = User.create!(name: 'Ryan', email: 'ryanm@partners.org', phone_number: '(781) 253-2154', password: 'ryan', group: nawal)
@@ -30,14 +30,14 @@ rachael = User.create!(name: 'Rachael', email: 'rachael@partners.org', phone_num
 dan = User.create!(name: 'Dan', email: 'dan@partners.org', phone_number: '(781) 253-2154', password: 'dan', group: nawal)
 jillian = User.create!(name: 'Jillian', email: 'jillian@partners.org', phone_number: '(781) 253-2154', password: 'jillian', group: nawal)
 
-# # MEMBERSHIPS
+# MEMBERSHIPS
 # nawal.memberships.create!(role: 'manager', group: mgh_group);
 # rob.memberships.create!(role: 'employee', group: mgh_group);
 # ryan.memberships.create!(role: 'employee', group: mgh_group);
 # brendan.memberships.create!(role: 'employee', group: mgh_group);
 
 
-# # VISITS
+# VISITS
 ryan.visits.create!(start_of_visit:'10/3/2015 at 10:30AM', end_of_visit:'10/3/2015 at 11:45AM', protocol:'11800 SARP Trial', subject_id:'008', reason_for_visit:'Bronchoscopy Appointment', message:'Patient experienced severe asthma exacerbation and cannot breathe', priority:'High')
 ryan.visits.create!(start_of_visit:'10/4/2015 at 12:00PM', end_of_visit:'10/4/2015 at 12:30PM', protocol:'1444 Metformin Trial', subject_id:'012', reason_for_visit:'Glucose Blood Draw', message:'Patient fainted during visit today. Must fill out adverse event report.', priority:'Low')
 
@@ -52,5 +52,5 @@ rachael.visits.create!(start_of_visit:'10/4/2015 at 12:00PM', end_of_visit:'10/4
 
 # brendan.visits.create!(start_of_visit:'10/3/2015 at 12:30PM', end_of_visit:'10/3/2015 at 3:00PM', protocol:'11844 KIA Trial', subject_id:'112', reason_for_visit:'Annual Follow-up', message:'Patient noted serious adverse event which required hospitalization. This requires immediate follow-up to the IRB in 72 hours.', visit_status:'High', sent_status:'Message Sent', manager_response_status:'Need more information')
 
-# # NOTIFICATIONS
+# NOTIFICATIONS
 ryan.visits.first.notifications.create!(message:"Paging for signature on adverse event report")

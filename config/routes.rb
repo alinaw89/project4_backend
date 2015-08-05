@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
    post '/login', to: 'auth#login'
    post '/register', to: 'auth#register'
    post '/logout', to: 'auth#logout'
@@ -27,17 +25,7 @@ Rails.application.routes.draw do
 
    delete '/visits/:visit_id', to: 'visits#destroy'
 
-
-
-
-
    # get '/groups/:group_id/notifications', to: 'notification#find'
-
-
-
-
-
-
 
  end
 

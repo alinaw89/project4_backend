@@ -16,6 +16,4 @@ class TwilioController < ProtectedController
     render_twiml response
   end
 
-  # def text
-  # end
 end
